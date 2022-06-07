@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Neighbour {
 
     /** Identifier */
-    private long id;
+    private int id;
 
     /** Full name */
     private String name;
@@ -26,12 +26,17 @@ public class Neighbour {
     private String aboutMe;
 
     /**
+     * Favorite
+     */
+    private Boolean favorite;
+
+    /**
      * Constructor
      * @param id
      * @param name
      * @param avatarUrl
      */
-    public Neighbour(long id, String name, String avatarUrl, String address,
+    public Neighbour(int id, String name, String avatarUrl, String address,
                      String phoneNumber, String aboutMe) {
         this.id = id;
         this.name = name;
@@ -39,13 +44,14 @@ public class Neighbour {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.aboutMe = aboutMe;
+        this.favorite = false;
     }
 
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -100,5 +106,14 @@ public class Neighbour {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    //setter & getter pour les favoris
+    public Boolean getFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(Boolean favorite) {
+        this.favorite = favorite;
     }
 }
