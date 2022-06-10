@@ -30,7 +30,7 @@ public class ProfilNeighbour extends AppCompatActivity {
     @BindView(R.id.info_fb)
     TextView social;
     @BindView(R.id.profile_favorite)
-    FloatingActionButton fab_favorite;
+    ImageView fab_favorite;
     @BindView(R.id.profile_return)
     ImageView back;
     @BindView(R.id.info_location)
@@ -51,12 +51,11 @@ public class ProfilNeighbour extends AppCompatActivity {
         setContentView(R.layout.activity_profil_neighbour);
         mNeighbourId = (int) getIntent().getLongExtra(ProfilNeighbour.NEIGHBOUR, 0);
         mApiService = DI.getNeighbourApiService();
-        mNeighbourId = mNeighbourId - 1 ;
         mNeighbour = mApiService.getNeighbour(mNeighbourId);
         ButterKnife.bind(this);
 
         //scroll describe text
-        about.setMovementMethod(new ScrollingMovementMethod());
+        about.setMovementMethod( new ScrollingMovementMethod());
 
         //Get profile information
         profile_name.setText(mNeighbour.getName());

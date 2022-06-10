@@ -27,6 +27,7 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.swipeLeft;
+import static android.support.test.espresso.action.ViewActions.swipeRight;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
@@ -94,15 +95,15 @@ public class NeighboursListTest {
     }
 
     /**
-     * Open Activity detail, when click on list element.
+     * Open ProfilNeighbour, when click on list element.
      */
     @Test
     public void myNeighboursList_onClickItem_shouldOpenProfilNeighbour() {
-        //Resultat : Lancement page profile
-        //Click sur l'item
+        //Result : Launch page profile
+        //Item click
         onView(withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(POSITION_ITEM, click()));
-        //Apres : Verification de l'affichage du Prenom.
+        //After : Verification of the display of the First name.
         onView(withId(R.id.profile_name)).check(matches(isDisplayed()));
     }
 
@@ -127,16 +128,18 @@ public class NeighboursListTest {
     @Test
     public void favoritesList_onFavoriteTab_showFavoriteItems() {
         //Result: List of favorites in the favorites tab.
+        // slide to favorite
+        onView(withId(R.id.container)).perform(swipeLeft());
 
-        //when: Add 2 favorites using the fab button.
+        //check if favorite is empty
+        onView(ViewMatchers.withId(R.id.fav_neighbours)).check(withItemCount(0));
+
+        //slide to neighbour-list
+        onView(withId(R.id.container)).perform(swipeRight());
+
+        //when: Add 1 favorites using the fab button.
         onView(withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(POSITION_ITEM, click()));
-        onView(withId(R.id.profile_favorite))
-                .perform(click());
-        pressBack();
-
-        onView(withId(R.id.list_neighbours))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(POSITION_ITEM + 1, click()));
         onView(withId(R.id.profile_favorite))
                 .perform(click());
         pressBack();
@@ -144,8 +147,8 @@ public class NeighboursListTest {
         //slides to the favorites tab.
         onView(withId(R.id.container)).perform(swipeLeft());
 
-        //after: Verification of the number of favorites to add (=2).
-        onView(ViewMatchers.withId(R.id.fav_neighbours)).check(withItemCount(2));
+        //after: Verification of the number of favorites to add (=1).
+        onView(ViewMatchers.withId(R.id.fav_neighbours)).check(withItemCount(1));
     }
 
     /**
@@ -154,8 +157,17 @@ public class NeighboursListTest {
     @Test
     public void myNeighboursListFavorite_deleteAction_shouldRemoveItemFromFavorite() {
         // Result: Removal of a favourite.
+        // slide to favorite
+        onView(withId(R.id.container)).perform(swipeLeft());
 
-        //Adding favorites.
+        //check if favorite is empty
+        onView(ViewMatchers.withId(R.id.fav_neighbours)).check(withItemCount(0));
+
+        //slide to neighbour-list
+        onView(withId(R.id.container)).perform(swipeRight());
+
+
+        //when: Add 1 favorites using the fab button.
         onView(withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(POSITION_ITEM, click()));
         onView(withId(R.id.profile_favorite))
@@ -166,9 +178,12 @@ public class NeighboursListTest {
         //check that the favorites list is not empty.
         onView(ViewMatchers.withId(R.id.fav_neighbours)).check(withItemCount(1));
 
-        // when: click on the icon to remove the favorites
+        // click on the fav neighbour
         onView(ViewMatchers.withId(R.id.fav_neighbours))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0, new DeleteViewAction()));
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+        onView(withId(R.id.profile_favorite))
+                .perform(click());
+        pressBack();
         // after: checks the number of items in the favorites list is -1
         onView(ViewMatchers.withId(R.id.fav_neighbours)).check(withItemCount(0));
     }

@@ -9,10 +9,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable-v24/ic_fb_24dp.xml" value="0.168" />
+        <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2195" />
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable-v24/ic_location_pink_24dp.xml" value="0.168" />
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable-v24/ic_phone_24dp.xml" value="0.168" />
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable-v24/ic_star_border_white_24dp.xml" value="0.11" />
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable-v24/ic_star_white_24dp.xml" value="0.11" />
+        <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable/ic_account.xml" value="0.2195" />
+        <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable/ic_delete_white_24dp.xml" value="0.2195" />
+        <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2195" />
+        <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable/ic_person_add_white_24dp.xml" value="0.2195" />
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable/ic_star_border_white_24dp.xml" value="0.11" />
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/drawable/ic_star_white_24dp.xml" value="0.11" />
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/layout/activity_favorite_fragmant.xml" value="0.33177083333333335" />
@@ -21,6 +26,7 @@
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/layout/fragment_favorite.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/layout/fragment_list_neighbour.xml" value="0.1546875" />
         <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/layout/fragment_neighbour.xml" value="0.1546875" />
+        <entry key="..\:/Users/aliou/OneDrive/Documents/GitHub/P3/Entrevoisins/app/src/main/res/layout/fragment_neighbour_list.xml" value="0.11302083333333333" />
       </map>
     </option>
   </component>
