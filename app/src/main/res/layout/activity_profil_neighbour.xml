@@ -40,14 +40,14 @@
         app:layout_constraintBottom_toBottomOf="@id/profile_picture"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/profile_favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="26dp"
-        android:backgroundTint="@android:color/white"
+        android:layout_margin="@dimen/text_margin"
         android:clickable="true"
         android:focusable="true"
+        android:background="@android:color/white"
         app:srcCompat="@drawable/ic_star_white_24dp"
         android:tint="@color/colorYellow"
         app:layout_constraintBottom_toBottomOf="@id/profile_picture"

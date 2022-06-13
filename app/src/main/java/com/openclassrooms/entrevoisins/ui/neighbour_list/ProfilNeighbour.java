@@ -1,12 +1,13 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
+import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 import com.bumptech.glide.Glide;
@@ -30,7 +31,7 @@ public class ProfilNeighbour extends AppCompatActivity {
     @BindView(R.id.info_fb)
     TextView social;
     @BindView(R.id.profile_favorite)
-    ImageView fab_favorite;
+    FloatingActionButton fab_favorite;
     @BindView(R.id.profile_return)
     ImageView back;
     @BindView(R.id.info_location)
@@ -74,10 +75,13 @@ public class ProfilNeighbour extends AppCompatActivity {
 
     public void setFabFavorite() {
         if (mApiService.isFavorite(mNeighbour)) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Favoris supprimé",Toast.LENGTH_LONG);
+            toast.show();
             mApiService.removeFavorite(mNeighbour);
         } else {
             mApiService.addFavorite(mNeighbour);
+            Toast toast = Toast.makeText(getApplicationContext(), "Favoris Ajouté",Toast.LENGTH_LONG);
+            toast.show();
         }
-
     }
 }
